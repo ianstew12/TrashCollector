@@ -30,7 +30,7 @@ namespace TrashCollector.Controllers
         }
 
         
-        public ActionResult Account(ApplicationUser user, CustomersTodayViewModel customerViewModel)
+        public ActionResult Account(ApplicationUser user, CollectorsViewModel collectorsViewModel)
         {
             
             DateTime today = new DateTime();
@@ -50,14 +50,14 @@ namespace TrashCollector.Controllers
                     (!(item.pickUpSchedule.noPickUpsStart <= today.Date &&
                     item.pickUpSchedule.noPickUpsEnd >= today.Date)))
                     {
-                        customerViewModel.customersToday.Add(item);
+                        collectorsViewModel.customersToday.Add(item);
                     }
                 }
                 
             }
-            customerViewModel.user = user;
+            collectorsViewModel.user = user;
 
-            return View(customerViewModel);
+            return View(collectorsViewModel);
         }
     }
 }

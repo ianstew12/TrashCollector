@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TrashCollector.Models
 {
-    public class CustomersTodayViewModel
+    public class CollectorsViewModel
     {
         public List<ApplicationUser> customersToday { get; set; }
         public ApplicationUser user { get; set; }
