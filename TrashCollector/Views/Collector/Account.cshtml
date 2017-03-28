@@ -1,0 +1,33 @@
+﻿@model TrashCollector.Models.CustomersTodayViewModel
+
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    Welcome,  @Model.user.firstName @Model.user.lastName!
+</h2>
+
+
+
+<a>
+    Your routes today:
+    @if (!(Model.customersToday == null))
+    {
+        foreach (var user in Model.customersToday)
+        {
+            <a>
+                Customer Id: @Model.user.Id
+                Address: @Model.user.streetAddress
+
+            </a>
+        }
+    }
+
+
+
+
+
+
+</a>

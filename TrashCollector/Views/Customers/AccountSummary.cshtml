@@ -1,0 +1,25 @@
+﻿@model TrashCollector.Models.ApplicationUser
+@{
+    ViewBag.Title = "AccountSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Account Summary For @Model.firstName @Model.lastName</h2>
+
+<a>
+
+    @{if (!(Model.balance == (null)))
+        {<a>
+        Amount Due: @Math.Abs(Model.balance);
+    </a>
+        }
+    }
+</a>
+
+
+@{Html.RenderPartial("_PickUpSchedule", Model);}
+
+
+
+<input type="button" class="btn btn-info" value="Update Pick-Up Info" 
+       onclick="location.href='@Url.Action("EditPickUpSchedule", "Customers")'" />

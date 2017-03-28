@@ -1,0 +1,23 @@
+﻿@model TrashCollector.Models.ApplicationUser
+
+<h3> Your current Pick Up Schedule:</h3>
+<a>
+    @{ if (Model.pickUpSchedule==(null))
+        {
+
+            <a> No pick-ups currently scheduled </a>
+        }
+
+    else 
+        {
+            <a>
+                Weekly: @Model.pickUpSchedule.weeklyPickUpDay
+                One - Time Pick Up: @Model.pickUpSchedule.specialPickUpDate
+                No Pick Ups:
+                From: @Model.pickUpSchedule.noPickUpsStart
+                To: @Model.pickUpSchedule.noPickUpsEnd
+
+            </a>
+        }
+    }
+</a>
