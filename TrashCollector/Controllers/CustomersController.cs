@@ -38,11 +38,23 @@ namespace TrashCollector.Controllers
             return View(user);
         }
 
-        public ActionResult EditPickUpSchedule(ApplicationUser user)
+       //get
+        public ActionResult EditPickUpSchedule(string id)
         {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.Single(m => m.Id == userId);
             return View(user);
         }
 
-        
+        [HttpPost]
+        public ActionResult EditPickUpSchedule(ApplicationUser user)
+        {
+            //var userId = User.Identity.GetUserId();
+            //user = _context.Users.Single(m => m.Id == userId);
+            //return Redirect(Url.Action("AccountSummary", "Customers", user ));
+            return View("AccountSummary", user);
+
+        }
+
     }
 }

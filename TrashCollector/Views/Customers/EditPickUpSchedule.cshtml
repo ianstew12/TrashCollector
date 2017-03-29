@@ -8,7 +8,7 @@
 <h2> Change Schedule: </h2>
 
 
-@using (Html.BeginForm("EditPickUpInfo", "Customer", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("EditPickUpSchedule", "Customers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     
@@ -18,14 +18,15 @@
     
 
         <h4>Select Weekly Pick-Up Day</h4>
-        <a>dropdown list here</a>
+       
+        
         
         <h4>Select Date For Special Pick-Up</h4>
 
         <div>
             Special (one time) pick-up:
             <input type="date" name="pickUpSchedule.specialPickUpDate">
-            <input type="submit">
+            
        
 
         <h4>Cancel All Pick-Ups During Specified Dates:</h4>
@@ -33,7 +34,7 @@
        
            No Pick-Ups Beginning:
             <input type="date" name="pickUpSchedule.noPickUpsStart">
-            <input type="submit">
+            
        
 
        

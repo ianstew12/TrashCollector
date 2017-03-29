@@ -6,7 +6,7 @@
 
 <h2>Account Summary For @Model.firstName @Model.lastName</h2>
 
-<a>
+
 
     @{if (!(Model.balance == (null)))
         {<a>
@@ -14,12 +14,12 @@
     </a>
         }
     }
-</a>
 
+</n>
 
 @{Html.RenderPartial("_PickUpSchedule", Model);}
 
 
 
 <input type="button" class="btn btn-info" value="Update Pick-Up Info" 
-       onclick="location.href='@Url.Action("EditPickUpSchedule", "Customers")'" />
+       onclick="location.href='@Url.Action("EditPickUpSchedule", "Customers", new { id = Model.Id })'" />
