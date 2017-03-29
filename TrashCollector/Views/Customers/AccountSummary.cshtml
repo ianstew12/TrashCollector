@@ -4,13 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Account Summary For @Model.firstName @Model.lastName</h2>
+<h2>Account Summary For @Model.firstName @Model.lastName <h2>
 
-
+                                                         
+    
 
     @{if (!(Model.balance == (null)))
         {<a>
-        Amount Due: @Math.Abs(Model.balance);
+        Amount Due: @Model.balance @*TODO due transactions * price (property)*@
     </a>
         }
     }

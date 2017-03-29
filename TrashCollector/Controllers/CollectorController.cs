@@ -59,5 +59,22 @@ namespace TrashCollector.Controllers
 
             return View(collectorsViewModel);
         }
+
+        public ActionResult UpdateBalances(CollectorsViewModel collectorsViewModel)
+        {
+            if (collectorsViewModel.customersToday != null)
+            {
+                foreach (var item in collectorsViewModel.customersToday)
+                {
+                    item.pickUpsTransacted++;
+                    collectorsViewModel.user.pickUpsTransacted++;
+                }
+            }
+           
+            return RedirectToAction("Account", collectorsViewModel.user);
+        }
+
+
+
     }
 }
